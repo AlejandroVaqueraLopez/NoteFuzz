@@ -1,0 +1,12 @@
+<resources>
+    <color name="purple_primary">#7C4DFF</color>
+    <color name="purple_dark">#5E35B1</color>
+    <color name="pink_accent">#FF4D8D</color>
+    <color name="background">#FFFFFF</color>
+    <color name="item_gray">#D9D9D9</color>
+    <color name="text_dark">#212121</color>
+    <color name="text_gray">#757575</color>
+    <color name="black">#000000</color>
+    <color name="white">#FFFFFF</color>
+    <color name="red_delete">#E53935</color>
+</resources>

@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">NoteFuzz</string>
+
+    <string name="hint_search">Buscar por título…</string>
+    <string name="hint_title">Título de la nota</string>
+    <string name="hint_description">Escribe tu nota…</string>
+
+    <string name="btn_save">Guardar</string>
+    <string name="btn_delete">Eliminar</string>
+
+    <string name="new_note">Nota nueva</string>
+    <string name="last_edited">Última edición: %1$s</string>
+
+    <string name="error_title_required">El título es obligatorio</string>
+
+    <string name="delete_title">Eliminar nota</string>
+    <string name="delete_message">¿Seguro que quieres eliminar esta nota? Esta acción no se puede deshacer.</string>
+    <string name="yes">Sí, eliminar</string>
+    <string name="no">Cancelar</string>
+
+    <string name="note_saved">Nota guardada</string>
+    <string name="note_deleted">Nota eliminada</string>
+
+    <string name="empty_list">No tienes notas todavía. Toca “+” para crear la primera.</string>
+    <string name="empty_search">No se encontraron notas con ese título.</string>
+</resources>

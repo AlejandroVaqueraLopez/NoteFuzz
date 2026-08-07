@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="10dp"
+    app:cardBackgroundColor="@color/item_gray"
+    app:cardCornerRadius="8dp"
+    app:cardElevation="0dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <TextView
+        android:id="@+id/tvNoteTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        android:textSize="16sp"
+        android:textColor="@color/text_dark"
+        android:maxLines="1"
+        android:ellipsize="end"
+        tools:text="Mi nota"
+        xmlns:tools="http://schemas.android.com/tools" />
+
+</androidx.cardview.widget.CardView>
