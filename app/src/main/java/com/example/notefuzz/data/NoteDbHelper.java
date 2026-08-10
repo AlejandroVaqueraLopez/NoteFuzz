@@ -11,15 +11,9 @@ import com.example.notefuzz.model.Note;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Capa de acceso a datos (DB Helper). Contiene toda la lógica CRUD
- * sobre la única tabla del proyecto: "note".
- */
 public class NoteDbHelper extends SQLiteOpenHelper {
-
     private static final String DATABASE_NAME = "notefuzz.db";
     private static final int DATABASE_VERSION = 1;
-
     public static final String TABLE_NOTE = "note";
     public static final String COLUMN_ID = "id";
     public static final String COLUMN_CREATED_AT = "created_at";
@@ -51,8 +45,7 @@ public class NoteDbHelper extends SQLiteOpenHelper {
         db.execSQL("DROP TABLE IF EXISTS " + TABLE_NOTE);
         onCreate(db);
     }
-
-    /** CREATE **/
+//create
     public long insertNote(Note note) {
         SQLiteDatabase db = getWritableDatabase();
         ContentValues values = new ContentValues();
@@ -65,8 +58,7 @@ public class NoteDbHelper extends SQLiteOpenHelper {
         db.close();
         return id;
     }
-
-    /** READ - una nota por id **/
+//getbyid
     public Note getNoteById(long id) {
         SQLiteDatabase db = getReadableDatabase();
         Cursor cursor = db.query(TABLE_NOTE, null, COLUMN_ID + "=?",
@@ -83,7 +75,7 @@ public class NoteDbHelper extends SQLiteOpenHelper {
         return note;
     }
 
-    /** READ - todas las notas, más recientes primero **/
+    //getall
     public List<Note> getAllNotes() {
         List<Note> notes = new ArrayList<>();
         SQLiteDatabase db = getReadableDatabase();
@@ -100,7 +92,7 @@ public class NoteDbHelper extends SQLiteOpenHelper {
         return notes;
     }
 
-    /** READ - búsqueda en tiempo real por título **/
+    //searchbytitle
     public List<Note> searchNotesByTitle(String query) {
         List<Note> notes = new ArrayList<>();
         SQLiteDatabase db = getReadableDatabase();
@@ -119,7 +111,7 @@ public class NoteDbHelper extends SQLiteOpenHelper {
         return notes;
     }
 
-    /** UPDATE **/
+    //update
     public int updateNote(Note note) {
         SQLiteDatabase db = getWritableDatabase();
         ContentValues values = new ContentValues();
@@ -134,7 +126,7 @@ public class NoteDbHelper extends SQLiteOpenHelper {
         return rows;
     }
 
-    /** DELETE **/
+    //delete
     public int deleteNote(long id) {
         SQLiteDatabase db = getWritableDatabase();
         int rows = db.delete(TABLE_NOTE, COLUMN_ID + "=?", new String[]{String.valueOf(id)});
