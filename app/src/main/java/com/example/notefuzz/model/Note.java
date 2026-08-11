@@ -1,5 +1,8 @@
 package com.example.notefuzz.model;
 
+/**
+ * Modelo de datos que representa la tabla "note" en SQLite.
+ */
 public class Note {
 
     private long id;
