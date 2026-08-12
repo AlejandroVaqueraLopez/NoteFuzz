@@ -25,6 +25,7 @@ public class NoteDbHelper extends SQLiteOpenHelper {
     public static final String COLUMN_EDITED_AT = "edited_at";
     public static final String COLUMN_STATUS = "status";
 
+    //metodo para crear tabla de notas
     private static final String CREATE_TABLE_NOTE =
             "CREATE TABLE " + TABLE_NOTE + " (" +
                     COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
@@ -34,21 +35,25 @@ public class NoteDbHelper extends SQLiteOpenHelper {
                     COLUMN_EDITED_AT + " TEXT, " +
                     COLUMN_STATUS + " INTEGER DEFAULT 1)";
 
+    //actualizar contexto
     public NoteDbHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
     }
 
+    //ejecutar creacion de base de datos
     @Override
     public void onCreate(SQLiteDatabase db) {
         db.execSQL(CREATE_TABLE_NOTE);
     }
 
+    //actualizacion de base de datos
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         db.execSQL("DROP TABLE IF EXISTS " + TABLE_NOTE);
         onCreate(db);
     }
 
+    //metodo de insercion de nota en la base de datos
     public long insertNote(Note note) {
         SQLiteDatabase db = getWritableDatabase();
         ContentValues values = new ContentValues();
@@ -62,6 +67,7 @@ public class NoteDbHelper extends SQLiteOpenHelper {
         return id;
     }
 
+    //obtener nota por ID en la base de datos
     public Note getNoteById(long id) {
         SQLiteDatabase db = getReadableDatabase();
         Cursor cursor = db.query(TABLE_NOTE, null, COLUMN_ID + "=?",
@@ -78,6 +84,7 @@ public class NoteDbHelper extends SQLiteOpenHelper {
         return note;
     }
 
+    //obtener todas las notas la base de datos
     public List<Note> getAllNotes() {
         List<Note> notes = new ArrayList<>();
         SQLiteDatabase db = getReadableDatabase();
@@ -94,6 +101,7 @@ public class NoteDbHelper extends SQLiteOpenHelper {
         return notes;
     }
 
+    //busqueda de notas por titulo en la base de datos
     public List<Note> searchNotesByTitle(String query) {
         List<Note> notes = new ArrayList<>();
         SQLiteDatabase db = getReadableDatabase();
@@ -112,6 +120,7 @@ public class NoteDbHelper extends SQLiteOpenHelper {
         return notes;
     }
 
+    //metodo para actualizar una nota en base datos
     public int updateNote(Note note) {
         SQLiteDatabase db = getWritableDatabase();
         ContentValues values = new ContentValues();
@@ -126,13 +135,15 @@ public class NoteDbHelper extends SQLiteOpenHelper {
         return rows;
     }
 
+    //metodo para eliminar nota en base de datos
     public int deleteNote(long id) {
-        SQLiteDatabase db = getWritableDatabase();
-        int rows = db.delete(TABLE_NOTE, COLUMN_ID + "=?", new String[]{String.valueOf(id)});
-        db.close();
+            SQLiteDatabase db = getWritableDatabase();
+            int rows = db.delete(TABLE_NOTE, COLUMN_ID + "=?", new String[]{String.valueOf(id)});
+            db.close();
         return rows;
     }
 
+    //metodo para crear objetos de nota a partir de los datos de la bd con el cursor
     private Note cursorToNote(Cursor cursor) {
         Note note = new Note();
         note.setId(cursor.getLong(cursor.getColumnIndexOrThrow(COLUMN_ID)));

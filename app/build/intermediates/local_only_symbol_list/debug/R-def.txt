@@ -40,6 +40,7 @@ string delete_message
 string delete_title
 string empty_list
 string empty_search
+string error_title_length_max
 string error_title_required
 string hint_description
 string hint_search

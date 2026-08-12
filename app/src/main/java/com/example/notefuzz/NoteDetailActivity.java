@@ -19,7 +19,6 @@ import java.util.Date;
 import java.util.Locale;
 
 public class NoteDetailActivity extends AppCompatActivity {
-
     private NoteDbHelper dbHelper;
     private EditText etTitle;
     private EditText etDescription;
@@ -34,9 +33,9 @@ public class NoteDetailActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_note_detail);
-
+        //preparar el contexto actual de la vista para el helper db
         dbHelper = new NoteDbHelper(this);
-
+        //captura de elementos de la vista
         ImageButton btnBack = findViewById(R.id.btnBack);
         etTitle = findViewById(R.id.etTitle);
         etDescription = findViewById(R.id.etDescription);
@@ -44,21 +43,26 @@ public class NoteDetailActivity extends AppCompatActivity {
         btnSave = findViewById(R.id.btnSave);
         btnDelete = findViewById(R.id.btnDelete);
 
+        //evento de salir de la vista detalle de nota
         btnBack.setOnClickListener(v -> finish());
 
+        //obtener el ID de la nota mediante el "intent" enviado desde la vista principal
         noteId = getIntent().getLongExtra(MainActivity.EXTRA_NOTE_ID, -1);
 
         if (noteId != -1) {
             loadNoteData();
         } else {
+            //en caso de que no se haya mandado un id de nota, aparecer elementos para nota nueva
             btnDelete.setVisibility(android.view.View.GONE);
             tvDate.setText(R.string.new_note);
         }
 
+        //mostrar botones de edicion
         btnSave.setOnClickListener(v -> saveNote());
         btnDelete.setOnClickListener(v -> confirmDelete());
     }
 
+    //modulo para cargar datos de nota seleccionada
     private void loadNoteData() {
         currentNote = dbHelper.getNoteById(noteId);
         if (currentNote == null) {
@@ -74,19 +78,37 @@ public class NoteDetailActivity extends AppCompatActivity {
         tvDate.setText(getString(R.string.last_edited, lastDate));
         btnDelete.setVisibility(android.view.View.VISIBLE);
     }
+    //modulo de validacion para limite de caracteres
+    private Boolean validateContent(int limit, String content){
+        return content.length() > limit;
+    }
 
     private void saveNote() {
+        //recoleccion de datos
         String title = etTitle.getText().toString().trim();
         String description = etDescription.getText().toString().trim();
-
+        //validacion aplicada para ver si la etiqueta esta vacia
         if (TextUtils.isEmpty(title)) {
             etTitle.setError(getString(R.string.error_title_required));
             etTitle.requestFocus();
             return;
         }
 
+        //validacion aplicada para limitar el alcance de caracteres a 100 en titulo
+        if (validateContent(100, title)) {
+            etTitle.setError(getString(R.string.error_title_length_max));
+            etTitle.requestFocus();
+            return;
+        }
+        //validacion aplicada para limitar el alcance de caracteres a 2000 en descripcion de nota
+        if (validateContent(2000, description)) {
+            etDescription.setError(getString(R.string.error_title_length_max));
+            etDescription.requestFocus();
+            return;
+        }
+        //obtencion de fecha actual
         String now = getCurrentTimestamp();
-
+        //en caso de ser un "insert"
         if (noteId == -1) {
             Note note = new Note();
             note.setTitle(title);
@@ -95,31 +117,37 @@ public class NoteDetailActivity extends AppCompatActivity {
             note.setEditedAt(now);
             note.setStatus(1);
             dbHelper.insertNote(note);
-        } else {
+        } else {//en caso de ser "update"
             currentNote.setTitle(title);
             currentNote.setDescription(description);
             currentNote.setEditedAt(now);
             dbHelper.updateNote(currentNote);
         }
-
+        //mensaje de confirmacion para nota guardada
         Toast.makeText(this, R.string.note_saved, Toast.LENGTH_SHORT).show();
         finish();
     }
 
+    //eliminar nota
     private void confirmDelete() {
+        //creacion de alerta con botones de confirmacion
         new AlertDialog.Builder(this)
                 .setTitle(R.string.delete_title)
                 .setMessage(R.string.delete_message)
                 .setPositiveButton(R.string.yes, (dialog, which) -> {
+                    //en caso de confirmar, eliminar nota en db
                     dbHelper.deleteNote(noteId);
+                    //mandar una alerta de confirmacion de eliminacion de nota
                     Toast.makeText(this, R.string.note_deleted, Toast.LENGTH_SHORT).show();
                     finish();
                 })
+                //en caso de no confirmar, simplemente regresar a la vista
                 .setNegativeButton(R.string.no, null)
                 .show();
     }
 
     private String getCurrentTimestamp() {
+        //formato de fecha y hora con metodo "format"
         SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy HH:mm", Locale.getDefault());
         return sdf.format(new Date());
     }

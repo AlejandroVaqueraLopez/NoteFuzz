@@ -12,6 +12,7 @@
     <string name="last_edited">Última edición: %1$s</string>
 
     <string name="error_title_required">El título es obligatorio</string>
+    <string name="error_title_length_max">Longitud máxima de caracteres</string>
 
     <string name="delete_title">Eliminar nota</string>
     <string name="delete_message">¿Seguro que quieres eliminar esta nota? Esta acción no se puede deshacer.</string>

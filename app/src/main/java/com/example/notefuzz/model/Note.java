@@ -1,10 +1,6 @@
 package com.example.notefuzz.model;
 
-/**
- * Modelo de datos que representa la tabla "note" en SQLite.
- */
 public class Note {
-
     private long id;
     private String createdAt;
     private String title;
@@ -15,6 +11,7 @@ public class Note {
     public Note() {
     }
 
+    //constructor para clase Note
     public Note(long id, String createdAt, String title, String description, String editedAt, int status) {
         this.id = id;
         this.createdAt = createdAt;
@@ -24,6 +21,7 @@ public class Note {
         this.status = status;
     }
 
+    //setters y getters
     public long getId() {
         return id;
     }
