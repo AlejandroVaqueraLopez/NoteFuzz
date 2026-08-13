@@ -8,10 +8,10 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.notefuzz.data.NoteDbHelper;
+import com.example.notefuzz.helper.NoteDbHelper;
+import com.example.notefuzz.helper.DialogUtils;
 import com.example.notefuzz.model.Note;
 
 import java.text.SimpleDateFormat;
@@ -32,9 +32,12 @@ public class NoteDetailActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_note_detail);
+
         //preparar el contexto actual de la vista para el helper db
         dbHelper = new NoteDbHelper(this);
+
         //captura de elementos de la vista
         ImageButton btnBack = findViewById(R.id.btnBack);
         etTitle = findViewById(R.id.etTitle);
@@ -47,7 +50,9 @@ public class NoteDetailActivity extends AppCompatActivity {
         btnBack.setOnClickListener(v -> finish());
 
         //obtener el ID de la nota mediante el "intent" enviado desde la vista principal
+        //en caso de no haberse enviado un ID correctamente, se asignara "-1"
         noteId = getIntent().getLongExtra(MainActivity.EXTRA_NOTE_ID, -1);
+
 
         if (noteId != -1) {
             loadNoteData();
@@ -89,7 +94,7 @@ public class NoteDetailActivity extends AppCompatActivity {
         String description = etDescription.getText().toString().trim();
         //validacion aplicada para ver si la etiqueta esta vacia
         if (TextUtils.isEmpty(title)) {
-            etTitle.setError(getString(R.string.error_title_required));
+            Toast.makeText(this, R.string.error_title_required, Toast.LENGTH_SHORT).show();
             etTitle.requestFocus();
             return;
         }
@@ -129,7 +134,7 @@ public class NoteDetailActivity extends AppCompatActivity {
     }
 
     //eliminar nota
-    private void confirmDelete() {
+    /*private void confirmDelete() {
         //creacion de alerta con botones de confirmacion
         new AlertDialog.Builder(this)
                 .setTitle(R.string.delete_title)
@@ -144,7 +149,12 @@ public class NoteDetailActivity extends AppCompatActivity {
                 //en caso de no confirmar, simplemente regresar a la vista
                 .setNegativeButton(R.string.no, null)
                 .show();
+    }*/
+
+    private void confirmDelete(){
+        DialogUtils.confirmDelete(this, dbHelper, noteId, this::finish);
     }
+
 
     private String getCurrentTimestamp() {
         //formato de fecha y hora con metodo "format"

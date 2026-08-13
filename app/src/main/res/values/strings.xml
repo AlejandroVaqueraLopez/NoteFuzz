@@ -24,4 +24,14 @@
 
     <string name="empty_list">No tienes notas todavía. Toca “+” para crear la primera.</string>
     <string name="empty_search">No se encontraron notas con ese título.</string>
+
+    <string name="onboarding_title_1">Tus notas en un solo lugar</string>
+    <string name="onboarding_desc_1">Ve todas tus notas ordenadas en la pantalla principal.</string>
+    <string name="onboarding_title_2">Crea notas fácilmente</string>
+    <string name="onboarding_desc_2">Toca el botón + para agregar una nota nueva.</string>
+    <string name="onboarding_title_3">Elimina cuando quieras</string>
+    <string name="onboarding_desc_3">Mantén presionada una nota para borrarla.</string>
+    <string name="next">Siguiente</string>
+    <string name="start">Comenzar</string>
+    <string name="menu_view_tutorial">Ver tutorial de nuevo</string>
 </resources>

@@ -4,6 +4,18 @@
         "source": "com.example.notefuzz.app-main-34:/drawable/ic_launcher_background.xml"
     },
     {
+        "merged": "com.example.notefuzz.app-merged_res-32:/drawable_dot_unselected.xml.flat",
+        "source": "com.example.notefuzz.app-main-34:/drawable/dot_unselected.xml"
+    },
+    {
+        "merged": "com.example.notefuzz.app-merged_res-32:/drawable_ic_onboarding_list.xml.flat",
+        "source": "com.example.notefuzz.app-main-34:/drawable/ic_onboarding_list.xml"
+    },
+    {
+        "merged": "com.example.notefuzz.app-merged_res-32:/layout_item_onboarding_page.xml.flat",
+        "source": "com.example.notefuzz.app-main-34:/layout/item_onboarding_page.xml"
+    },
+    {
         "merged": "com.example.notefuzz.app-merged_res-32:/mipmap-mdpi_ic_launcher.webp.flat",
         "source": "com.example.notefuzz.app-main-34:/mipmap-mdpi/ic_launcher.webp"
     },
@@ -14,6 +26,10 @@
     {
         "merged": "com.example.notefuzz.app-merged_res-32:/drawable_bg_search.xml.flat",
         "source": "com.example.notefuzz.app-main-34:/drawable/bg_search.xml"
+    },
+    {
+        "merged": "com.example.notefuzz.app-merged_res-32:/menu_menu_main.xml.flat",
+        "source": "com.example.notefuzz.app-main-34:/menu/menu_main.xml"
     },
     {
         "merged": "com.example.notefuzz.app-merged_res-32:/mipmap-mdpi_ic_launcher_round.webp.flat",
@@ -32,6 +48,10 @@
         "source": "com.example.notefuzz.app-main-34:/mipmap-xxxhdpi/ic_launcher.webp"
     },
     {
+        "merged": "com.example.notefuzz.app-merged_res-32:/layout_activity_onboarding.xml.flat",
+        "source": "com.example.notefuzz.app-main-34:/layout/activity_onboarding.xml"
+    },
+    {
         "merged": "com.example.notefuzz.app-merged_res-32:/mipmap-xhdpi_ic_launcher.webp.flat",
         "source": "com.example.notefuzz.app-main-34:/mipmap-xhdpi/ic_launcher.webp"
     },
@@ -40,8 +60,16 @@
         "source": "com.example.notefuzz.app-main-34:/mipmap-hdpi/ic_launcher_round.webp"
     },
     {
+        "merged": "com.example.notefuzz.app-merged_res-32:/drawable_dot_selected.xml.flat",
+        "source": "com.example.notefuzz.app-main-34:/drawable/dot_selected.xml"
+    },
+    {
         "merged": "com.example.notefuzz.app-merged_res-32:/mipmap-xhdpi_ic_launcher_foreground.webp.flat",
         "source": "com.example.notefuzz.app-main-34:/mipmap-xhdpi/ic_launcher_foreground.webp"
+    },
+    {
+        "merged": "com.example.notefuzz.app-merged_res-32:/drawable_ic_onboarding_delete.xml.flat",
+        "source": "com.example.notefuzz.app-main-34:/drawable/ic_onboarding_delete.xml"
     },
     {
         "merged": "com.example.notefuzz.app-merged_res-32:/mipmap-xxhdpi_ic_launcher_foreground.webp.flat",
@@ -90,6 +118,14 @@
     {
         "merged": "com.example.notefuzz.app-merged_res-32:/layout_activity_main.xml.flat",
         "source": "com.example.notefuzz.app-main-34:/layout/activity_main.xml"
+    },
+    {
+        "merged": "com.example.notefuzz.app-merged_res-32:/drawable_ic_more_vert.xml.flat",
+        "source": "com.example.notefuzz.app-main-34:/drawable/ic_more_vert.xml"
+    },
+    {
+        "merged": "com.example.notefuzz.app-merged_res-32:/drawable_ic_onboarding_add.xml.flat",
+        "source": "com.example.notefuzz.app-main-34:/drawable/ic_onboarding_add.xml"
     },
     {
         "merged": "com.example.notefuzz.app-merged_res-32:/mipmap-xhdpi_ic_launcher_round.webp.flat",

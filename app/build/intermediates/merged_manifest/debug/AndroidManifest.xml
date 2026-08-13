@@ -25,7 +25,7 @@
         android:testOnly="true"
         android:theme="@style/Theme.NoteFuzz" >
         <activity
-            android:name="com.example.notefuzz.MainActivity"
+            android:name="com.example.notefuzz.OnboardingActivity"
             android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -33,6 +33,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name="com.example.notefuzz.MainActivity"
+            android:exported="false" />
         <activity
             android:name="com.example.notefuzz.NoteDetailActivity"
             android:exported="false"

@@ -19,6 +19,7 @@ public class NoteAdapter extends RecyclerView.Adapter<NoteAdapter.NoteViewHolder
     //interfaz para implementar un "listener"
     public interface OnNoteClickListener {
         void onNoteClick(Note note);//metodo de la interfaz
+        void onNoteLongClick(Note note);//metodo de largo click en interfaz
     }
 
     private List<Note> noteList;
@@ -50,10 +51,24 @@ public class NoteAdapter extends RecyclerView.Adapter<NoteAdapter.NoteViewHolder
     public void onBindViewHolder(@NonNull NoteViewHolder holder, int position) {
         Note note = noteList.get(position);
         holder.tvTitle.setText(note.getTitle());
+
+        String lastDate = note.getEditedAt() != null
+                ? note.getEditedAt()
+                : note.getCreatedAt();
+        holder.tvDatePrev.setText(lastDate);
+
+        //cuando hacemos click normal
         holder.itemView.setOnClickListener(v -> {
             if (listener != null) {
                 listener.onNoteClick(note);
             }
+        });
+        //cuando hacemos click largo
+        holder.itemView.setOnLongClickListener(v -> {
+            if(listener != null){
+                listener.onNoteLongClick(note);
+            }
+            return true;//requiere return para indicar que se consumio el evento
         });
     }
 
@@ -66,10 +81,12 @@ public class NoteAdapter extends RecyclerView.Adapter<NoteAdapter.NoteViewHolder
     //guarda referencias de los items de la lista
     static class NoteViewHolder extends RecyclerView.ViewHolder {
         TextView tvTitle;
+        TextView tvDatePrev;
 
         NoteViewHolder(@NonNull View itemView) {
             super(itemView);
             tvTitle = itemView.findViewById(R.id.tvNoteTitle);
+            tvDatePrev = itemView.findViewById(R.id.tvDatePrev);
         }
     }
 }
