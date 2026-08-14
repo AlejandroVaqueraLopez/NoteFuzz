@@ -1,10 +1,10 @@
-#Thu Aug 13 00:21:42 PDT 2026
-base.0=C\:\\Users\\vaquera\\AndroidStudioProjects\\cinnadaly\\NoteFuzz _onboarding_2\\NoteFuzz\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes.dex
-base.1=C\:\\Users\\vaquera\\AndroidStudioProjects\\cinnadaly\\NoteFuzz _onboarding_2\\NoteFuzz\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\0\\classes.dex
-base.2=C\:\\Users\\vaquera\\AndroidStudioProjects\\cinnadaly\\NoteFuzz _onboarding_2\\NoteFuzz\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\1\\classes.dex
-base.3=C\:\\Users\\vaquera\\AndroidStudioProjects\\cinnadaly\\NoteFuzz _onboarding_2\\NoteFuzz\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\2\\classes.dex
-base.4=C\:\\Users\\vaquera\\AndroidStudioProjects\\cinnadaly\\NoteFuzz _onboarding_2\\NoteFuzz\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\4\\classes.dex
-base.5=C\:\\Users\\vaquera\\AndroidStudioProjects\\cinnadaly\\NoteFuzz _onboarding_2\\NoteFuzz\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\6\\classes.dex
+#Fri Aug 14 00:20:16 PDT 2026
+base.0=C\:\\Users\\vaquera\\AndroidStudioProjects\\cinnadaly\\NoteFuzz_status_fix (1)\\NoteFuzz\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes.dex
+base.1=C\:\\Users\\vaquera\\AndroidStudioProjects\\cinnadaly\\NoteFuzz_status_fix (1)\\NoteFuzz\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\0\\classes.dex
+base.2=C\:\\Users\\vaquera\\AndroidStudioProjects\\cinnadaly\\NoteFuzz_status_fix (1)\\NoteFuzz\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\1\\classes.dex
+base.3=C\:\\Users\\vaquera\\AndroidStudioProjects\\cinnadaly\\NoteFuzz_status_fix (1)\\NoteFuzz\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\2\\classes.dex
+base.4=C\:\\Users\\vaquera\\AndroidStudioProjects\\cinnadaly\\NoteFuzz_status_fix (1)\\NoteFuzz\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\4\\classes.dex
+base.5=C\:\\Users\\vaquera\\AndroidStudioProjects\\cinnadaly\\NoteFuzz_status_fix (1)\\NoteFuzz\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\6\\classes.dex
 path.0=classes.dex
 path.1=0/classes.dex
 path.2=1/classes.dex

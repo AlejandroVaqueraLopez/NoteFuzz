@@ -120,7 +120,7 @@ public class NoteDetailActivity extends AppCompatActivity {
             note.setDescription(description);
             note.setCreatedAt(now);
             note.setEditedAt(now);
-            note.setStatus(1);
+            note.setStatus(NoteDbHelper.STATUS_ACTIVE);
             dbHelper.insertNote(note);
         } else {//en caso de ser "update"
             currentNote.setTitle(title);
@@ -133,23 +133,6 @@ public class NoteDetailActivity extends AppCompatActivity {
         finish();
     }
 
-    //eliminar nota
-    /*private void confirmDelete() {
-        //creacion de alerta con botones de confirmacion
-        new AlertDialog.Builder(this)
-                .setTitle(R.string.delete_title)
-                .setMessage(R.string.delete_message)
-                .setPositiveButton(R.string.yes, (dialog, which) -> {
-                    //en caso de confirmar, eliminar nota en db
-                    dbHelper.deleteNote(noteId);
-                    //mandar una alerta de confirmacion de eliminacion de nota
-                    Toast.makeText(this, R.string.note_deleted, Toast.LENGTH_SHORT).show();
-                    finish();
-                })
-                //en caso de no confirmar, simplemente regresar a la vista
-                .setNegativeButton(R.string.no, null)
-                .show();
-    }*/
 
     private void confirmDelete(){
         DialogUtils.confirmDelete(this, dbHelper, noteId, this::finish);

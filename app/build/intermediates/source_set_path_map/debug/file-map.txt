@@ -26,10 +26,10 @@ com.example.notefuzz.app-savedstate-1.2.1-24 C:\Users\vaquera\.gradle\caches\tra
 com.example.notefuzz.app-startup-runtime-1.1.1-25 C:\Users\vaquera\.gradle\caches\transforms-3\ec5ec4e3cb85451f82f16c9e6bf31f61\transformed\startup-runtime-1.1.1\res
 com.example.notefuzz.app-lifecycle-runtime-2.6.1-26 C:\Users\vaquera\.gradle\caches\transforms-3\fc50db5668ff7bc8adf5ca296bc7f0b2\transformed\lifecycle-runtime-2.6.1\res
 com.example.notefuzz.app-core-runtime-2.2.0-27 C:\Users\vaquera\.gradle\caches\transforms-3\ff1b369f9efaa17b93f6d25459ede875\transformed\core-runtime-2.2.0\res
-com.example.notefuzz.app-pngs-28 C:\Users\vaquera\AndroidStudioProjects\cinnadaly\NoteFuzz _onboarding_2\NoteFuzz\app\build\generated\res\pngs\debug
-com.example.notefuzz.app-resValues-29 C:\Users\vaquera\AndroidStudioProjects\cinnadaly\NoteFuzz _onboarding_2\NoteFuzz\app\build\generated\res\resValues\debug
-com.example.notefuzz.app-packageDebugResources-30 C:\Users\vaquera\AndroidStudioProjects\cinnadaly\NoteFuzz _onboarding_2\NoteFuzz\app\build\intermediates\incremental\debug\packageDebugResources\merged.dir
-com.example.notefuzz.app-packageDebugResources-31 C:\Users\vaquera\AndroidStudioProjects\cinnadaly\NoteFuzz _onboarding_2\NoteFuzz\app\build\intermediates\incremental\debug\packageDebugResources\stripped.dir
-com.example.notefuzz.app-merged_res-32 C:\Users\vaquera\AndroidStudioProjects\cinnadaly\NoteFuzz _onboarding_2\NoteFuzz\app\build\intermediates\merged_res\debug
-com.example.notefuzz.app-debug-33 C:\Users\vaquera\AndroidStudioProjects\cinnadaly\NoteFuzz _onboarding_2\NoteFuzz\app\src\debug\res
-com.example.notefuzz.app-main-34 C:\Users\vaquera\AndroidStudioProjects\cinnadaly\NoteFuzz _onboarding_2\NoteFuzz\app\src\main\res
+com.example.notefuzz.app-pngs-28 C:\Users\vaquera\AndroidStudioProjects\cinnadaly\NoteFuzz_status_fix (1)\NoteFuzz\app\build\generated\res\pngs\debug
+com.example.notefuzz.app-resValues-29 C:\Users\vaquera\AndroidStudioProjects\cinnadaly\NoteFuzz_status_fix (1)\NoteFuzz\app\build\generated\res\resValues\debug
+com.example.notefuzz.app-packageDebugResources-30 C:\Users\vaquera\AndroidStudioProjects\cinnadaly\NoteFuzz_status_fix (1)\NoteFuzz\app\build\intermediates\incremental\debug\packageDebugResources\merged.dir
+com.example.notefuzz.app-packageDebugResources-31 C:\Users\vaquera\AndroidStudioProjects\cinnadaly\NoteFuzz_status_fix (1)\NoteFuzz\app\build\intermediates\incremental\debug\packageDebugResources\stripped.dir
+com.example.notefuzz.app-merged_res-32 C:\Users\vaquera\AndroidStudioProjects\cinnadaly\NoteFuzz_status_fix (1)\NoteFuzz\app\build\intermediates\merged_res\debug
+com.example.notefuzz.app-debug-33 C:\Users\vaquera\AndroidStudioProjects\cinnadaly\NoteFuzz_status_fix (1)\NoteFuzz\app\src\debug\res
+com.example.notefuzz.app-main-34 C:\Users\vaquera\AndroidStudioProjects\cinnadaly\NoteFuzz_status_fix (1)\NoteFuzz\app\src\main\res

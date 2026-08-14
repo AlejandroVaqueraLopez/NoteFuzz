@@ -25,6 +25,9 @@ public class NoteDbHelper extends SQLiteOpenHelper {
     public static final String COLUMN_EDITED_AT = "edited_at";
     public static final String COLUMN_STATUS = "status";
 
+    public static final int STATUS_ACTIVE = 0;
+    public static final int STATUS_INACTIVE = 1;
+
     //metodo para crear tabla de notas
     private static final String CREATE_TABLE_NOTE =
             "CREATE TABLE " + TABLE_NOTE + " (" +
@@ -33,7 +36,7 @@ public class NoteDbHelper extends SQLiteOpenHelper {
                     COLUMN_TITLE + " TEXT NOT NULL, " +
                     COLUMN_DESCRIPTION + " TEXT, " +
                     COLUMN_EDITED_AT + " TEXT, " +
-                    COLUMN_STATUS + " INTEGER DEFAULT 1)";
+                    COLUMN_STATUS + " INTEGER DEFAULT " + STATUS_ACTIVE + ")";
 
     //actualizar contexto
     public NoteDbHelper(Context context) {
@@ -88,8 +91,10 @@ public class NoteDbHelper extends SQLiteOpenHelper {
     public List<Note> getAllNotes() {
         List<Note> notes = new ArrayList<>();
         SQLiteDatabase db = getReadableDatabase();
-        Cursor cursor = db.query(TABLE_NOTE, null, null, null, null, null,
-                COLUMN_ID + " DESC");
+        Cursor cursor = db.query(TABLE_NOTE, null,
+                COLUMN_STATUS + "=?",
+                new String[]{String.valueOf(STATUS_ACTIVE)},
+                null, null, COLUMN_ID + " DESC");
 
         if (cursor != null) {
             while (cursor.moveToNext()) {
@@ -106,8 +111,8 @@ public class NoteDbHelper extends SQLiteOpenHelper {
         List<Note> notes = new ArrayList<>();
         SQLiteDatabase db = getReadableDatabase();
         Cursor cursor = db.query(TABLE_NOTE, null,
-                COLUMN_TITLE + " LIKE ?",
-                new String[]{"%" + query + "%"},
+                COLUMN_TITLE + " LIKE ? AND " + COLUMN_STATUS + "=?",
+                new String[]{"%" + query + "%", String.valueOf(STATUS_ACTIVE)},
                 null, null, COLUMN_ID + " DESC");
 
         if (cursor != null) {
@@ -137,9 +142,12 @@ public class NoteDbHelper extends SQLiteOpenHelper {
 
     //metodo para eliminar nota en base de datos
     public int deleteNote(long id) {
-            SQLiteDatabase db = getWritableDatabase();
-            int rows = db.delete(TABLE_NOTE, COLUMN_ID + "=?", new String[]{String.valueOf(id)});
-            db.close();
+        SQLiteDatabase db = getWritableDatabase();
+        ContentValues values = new ContentValues();
+        values.put(COLUMN_STATUS, STATUS_INACTIVE);
+        int rows = db.update(TABLE_NOTE, values, COLUMN_ID + "=?",
+                new String[]{String.valueOf(id)});
+        db.close();
         return rows;
     }
 
