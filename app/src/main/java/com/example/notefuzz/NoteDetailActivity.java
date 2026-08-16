@@ -9,6 +9,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 
 import com.example.notefuzz.helper.NoteDbHelper;
 import com.example.notefuzz.helper.DialogUtils;
@@ -45,6 +46,11 @@ public class NoteDetailActivity extends AppCompatActivity {
         tvDate = findViewById(R.id.tvDate);
         btnSave = findViewById(R.id.btnSave);
         btnDelete = findViewById(R.id.btnDelete);
+
+        //indicando colores para los "placeholders"
+        etTitle.setHintTextColor(ContextCompat.getColor(this,R.color.text_gray));
+        etDescription.setHintTextColor(ContextCompat.getColor(this,R.color.text_gray));
+
 
         //evento de salir de la vista detalle de nota
         btnBack.setOnClickListener(v -> finish());

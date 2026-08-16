@@ -12,6 +12,7 @@ import android.widget.PopupMenu;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -44,6 +45,9 @@ public class MainActivity extends AppCompatActivity implements NoteAdapter.OnNot
         //creacion de objeto recyclerView
         RecyclerView recyclerView = findViewById(R.id.recyclerViewNotes);
         etSearch = findViewById(R.id.etSearch);
+        //definicion de colores de "placeholder" y texto
+        etSearch.setTextColor(ContextCompat.getColor(this,R.color.text_dark));
+        etSearch.setHintTextColor(ContextCompat.getColor(this,R.color.text_gray));
         tvEmpty = findViewById(R.id.tvEmpty);
         FloatingActionButton fabAdd = findViewById(R.id.fabAdd);
         ImageButton btnMenu = findViewById(R.id.btnMenu);
